@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <title>ทายนิสัยทาสแมว จากสีของแมวที่เลี้ยง</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -18,13 +20,13 @@
         crossorigin="anonymous"></script>
     <style>
         body {
-            background-color: #FFE8B8;
+            background-color: #F9E5BC;
         }
 
-        p {
-            font-size: 15px;
+        p,span {
+            font-size: 16px;
+            font-family: 'Itim', cursive;
         }
-
         .navColor {
             background: #FFFDD0;
         }
@@ -36,7 +38,7 @@
         }
 
         .sub-topic {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: rgb(243, 121, 52);
         }
@@ -44,38 +46,58 @@
         .container {
             width: 60%;
         }
+
+        .responsive {
+            display: block;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+  
+            width: 100%;
+            max-width: 380px;
+            height: auto;
+          }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light justify-content-center">
-        <ul class="nav nav-pills mb-3" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="pills1-tab" data-toggle="pill" href="#page1" role="tab" aria-controls="page1" aria-selected="true">สีเปรอะ</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills2-tab" data-toggle="pill" href="#page2" role="tab" aria-controls="page2" aria-selected="false">ไล่เฉดสี</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills3-tab" data-toggle="pill" href="#page3" role="tab" aria-controls="page3" aria-selected="false">สองสี</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills4-tab" data-toggle="pill" href="#page4" role="tab" aria-controls="page4" aria-selected="false">สีแต้ม</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills5-tab" data-toggle="pill" href="#page5" role="tab" aria-controls="page5" aria-selected="false">สามสี</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills6-tab" data-toggle="pill" href="#page6" role="tab" aria-controls="page6" aria-selected="false">ลายเสือ</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills7-tab" data-toggle="pill" href="#page7" role="tab" aria-controls="page7" aria-selected="false">สีล้วน</a>
-            </li>
-        </ul>
+    <nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav mb-2justify-content-center">
+                <a class="navbar-brand mb-0 h1" href="#"><i>Color of Cat</i></a>
+                <li class="nav-item border-right" >
+                    <a class="nav-link" href="#page1">Tortoiseshell</a>
+                </li>
+                <li class="nav-item border-right">
+                    <a class="nav-link" href="#page2">Shading patterns</a>
+                </li>
+                <li class="nav-item border-right">
+                    <a class="nav-link" href="#page3">Bicolors</a>
+                </li> 
+                <li class="nav-item border-right">
+                    <a class="nav-link" href="#page4">Colour Point</a>
+                </li>
+                <li class="nav-item border-right">
+                    <a class="nav-link" href="#page5">Calico</a>
+                </li>
+                <li class="nav-item border-right">
+                    <a class="nav-link" href="#page6">Tabby pattern</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#page7">Solid / Self-colour</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <div class="container">
-        <img id="page1"  src="https://files.eventpass.co/eventpass-api/files/1628009784221-01.jpg" class="img-fluid" alt="cat">
+        <img id="page1" src="https://files.eventpass.co/eventpass-api/files/1628009784221-01.jpg" class="responsive"
+            alt="cat">
         <p><span class="topic">แมวสีเปรอะ</span></p>
         <p><span class="sub-topic">ลักษณะของแมว : </span>ขนมีสีดำ น้ำตาล แดง ส้ม ผสม ๆ กันไปอย่างละเกือบเท่า ๆ กัน
             ดูไม่เป็นลายชัดเจน เป็นด่าง ๆ ไปทั้งตัว</p>
@@ -88,20 +110,21 @@
             มีแค่ไม่กี่คนเท่านั้นที่คุณจะเปิดโอกาสให้เขารู้จักตัวตนเบื้องลึกของคุณจริง ๆ ในทุก ๆ
             ด้าน</p>
 
-        <img id="page2" src="https://files.eventpass.co/eventpass-api/files/1628009977581-02.jpg" class="img-fluid"
+        <img id="page2" src="https://files.eventpass.co/eventpass-api/files/1628009977581-02.jpg" class="responsive"
             alt="cat">
         <p><span class="topic">แมวไล่เฉดสี</span></p>
         <p><span class="sub-topic">ลักษณะของแมว :</span> โคนขนจะเป็นสีอ่อน ส่วนปลายเส้นขนจะเป็นสีเข้ม
             เห็นได้ชัดเวลาน้องขยับตัว แล้วจะมีขนสีอ่อนภายในเป็นประกายออกมา</p>
         <p><span class="sub-topic">นิสัยของทาส :</span>
-             คนที่เป็นทาสแมวไล่เฉดสี มักเป็นคนฉลาด ไหวพริบดี
+            คนที่เป็นทาสแมวไล่เฉดสี มักเป็นคนฉลาด ไหวพริบดี
             มีวาทศิลป์ในการพูด หรืออีกด้านหนึ่งก็ดูเป็นคนเล่ห์เหลี่ยมจัด แพรวพราว ทันคน
             สามารถรับมือกับคนรอบข้างได้ดี ไม่ว่าจะมาดีหรือมาร้าย คนกลุ่มนี้เอาอยู่หมด
             ด้วยความเป็นคนช่างสังเกต และมักจับตาพฤติกรรมของคนรอบตัวอยู่เสมอ
             โดยที่บางทีตัวเองก็ไม่รู้ตัว แต่มันเป็นสัญชาติญาณไปแล้ว เมื่อเกิดปัญหากับคุณ
             คุณจะใช้ความนิ่งเข้าข่ม ไม่มีตื่นตูม และค่อย ๆ แก้ปัญหาจนผ่านไปได้ด้วยดีเสมอ</p>
 
-        <img id="page3" src="https://files.eventpass.co/eventpass-api/files/1628010160590-03.jpg" class="img-fluid" alt="cat">
+        <img id="page3" src="https://files.eventpass.co/eventpass-api/files/1628010160590-03.jpg" class="responsive"
+            alt="cat">
         <p><span class="topic">แมวสองสี</span></p>
         <p><span class="sub-topic">ลักษณะของแมว :</span> มีขนสีขาว ปนกับสีอื่นอีก 1 สี ลวดลายของสีขนที่เกิดขึ้นนี้
             จะมีลักษณะคล้ายลายของวัว ทำให้มีชื่อเรียกเล่น ๆ ว่า “cow cat” (แล้วตกลงเป็นวัวหรือแมวเนี่ย
@@ -114,7 +137,8 @@
             ถูกเบี่ยงเบนความสนใจจากสิ่งเร้าได้ง่าย ขี้โลเล ยิ่งเวลาต้องเลือก หรือตัดสินใจอะไรซักอย่าง
             คุณจะรู้สึกต้องคิดมากเป็นพิเศษ</p>
 
-        <img id="page4" src="https://files.eventpass.co/eventpass-api/files/1628010303061-04.jpg" class="img-fluid" alt="cat">
+        <img id="page4" src="https://files.eventpass.co/eventpass-api/files/1628010303061-04.jpg" class="responsive"
+            alt="cat">
         <p><span class="topic">สีแต้ม</span></p>
         <p><span class="sub-topic">ลักษณะของแมว :</span> เป็นแมวสีขาว หรือขาวครีม แล้วมีลายสีอื่นปนเป็นบริเวณ
             โดยเฉพาะที่เท้าทั้ง 4 ข้าง หาง และตรงกลางหน้า จนเหมือนใส่ถุงเท้า
@@ -125,7 +149,8 @@
             แพนิคกับทุกเรื่อง แม้แต่เรื่องเล็ก ๆ ก็ตาม
             แต่มักแสดงออกให้คนรอบข้างเห็นว่าชั้นรับมือได้กับทุก ๆ เรื่องสบายมาก</p>
 
-        <img id="page5" src="https://files.eventpass.co/eventpass-api/files/1628010432309-05.jpg" class="img-fluid" alt="cat">
+        <img id="page5" src="https://files.eventpass.co/eventpass-api/files/1628010432309-05.jpg" class="responsive"
+            alt="cat">
         <p><span class="topic">สามสี</span></p>
         <p><span class="sub-topic">ลักษณะของแมว :</span> มีขน 3 สีหลัก ๆ ในตัว โดยที่พบส่วนใหญ่ จะเป็นสีขาว ดำ ส้ม
             แต้มเป็นลายทั่วทั้งตัว ซึ่งคนญี่ปุ่นเชื่อว่าแมวที่มี 3 สีเป็นแมวมงคล
@@ -138,7 +163,8 @@
             แบบที่ไม่ต้องยุ่งกับใครให้วุ่นวาย คือช่วงเวลานาทีทองที่ประเสริฐที่สุดแล้ว
             (แต่ขอยกเว้นให้แมวตัวนึง อนุญาตให้เข้ามาวุ่นวายได้ตลอดเลย)</p>
 
-        <img id="page6" src="https://files.eventpass.co/eventpass-api/files/1628010609912-06.jpg" class="img-fluid" alt="cat">
+        <img id="page6" src="https://files.eventpass.co/eventpass-api/files/1628010609912-06.jpg" class="responsive"
+            alt="cat">
         <p><span class="topic">ลายเสือ</span></p>
         <p><span class="sub-topic">ลักษณะของแมว :</span> เป็นแมวที่พบได้ทั่วไป มีสีแตกต่างกันออกไป
             แต่โดดเด่นที่มีลายเป็นเส้น ๆ หรือขีด ๆ คล้ายลายของเสือ หรือบางตัวอาจเป็นลายจุด ๆ
@@ -151,7 +177,8 @@
             มองว่าชีวิตคือการผจญภัย พร้อมลุยกับทุกเรื่องแบบที่ว่าไม่เคยกลัวอะไรเลย
             ยกเว้นกลัวแค่อย่างเดียวคือ..กลัวแมวไม่รัก!</p>
 
-        <img id="page7" src="https://files.eventpass.co/eventpass-api/files/1628010748459-07.jpg" class="img-fluid" alt="cat">
+        <img id="page7" src="https://files.eventpass.co/eventpass-api/files/1628010748459-07.jpg" class="responsive"
+            alt="cat">
         <p><span class="topic">สีล้วน</span></p>
         <p><span class="sub-topic">ลักษณะของแมว :</span> มีสีเดียวกันทั้งตัว ตั้งแต่หัวจรดปลายหาง มีทั้งสีขาว เทา ดำ ส้ม
             ครีม หรือน้ำตาล
