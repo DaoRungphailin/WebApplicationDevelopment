@@ -8,16 +8,7 @@
     <script>
         var worker
         var niceBool = false;
-        var counting =0
-        function showHide() {
-            var x = document.getElementById("div1");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        }
-
+        var counting = 0
         //Head
         var h1 = document.createElement("h1");
         h1.innerHTML = "Exercise 04: JavaScript&DOM";
@@ -27,7 +18,51 @@
         var btn1 = document.createElement("button");
         btn1.innerHTML = "Click me to display Date and Time";
         document.body.appendChild(btn1);
-        
+
+        var btn2 = document.createElement("button");
+        btn2.innerHTML = "test";
+        btn2.style.top = "0px";
+        btn2.style.right = "0px";
+        btn2.style.visibility = "hidden";
+        btn2.style.position = "fixed";
+        document.body.appendChild(btn2);
+
+        btn1.onclick = function () {
+            createWorker()
+            btn2.style.visibility = "visible";
+            btn1.style.visibility = "hidden";
+        }
+
+        btn2.onclick = function () {
+            deleteWorker()
+            btn2.style.visibility = "hidden";
+            btn1.style.visibility = "visible";
+            btn1.style.color = btn2.style.color;
+            btn1.style.backgroundColor = btn2.style.backgroundColor;
+        }
+
+        function createWorker() {
+            worker = new Worker("worker.js");
+            btn2.innerHTML = new Date();
+            worker.onmessage = function (value) {
+                btn1.innerHTML = event.data;
+                btn2.innerHTML = event.data;
+                changeColor();
+            }
+        }
+
+        function deleteWorker() {
+            worker.terminate();
+        }
+
+        function changeColor() {
+            bgColor = ["black", "DarkSeaGreen", "DeepPink", "salmon", "lightgreen", "olive"];
+            txtColor = ["white", "DarkSlateGrey", "FloralWhite", "RebeccaPurple", "hotpink", "orangered",];
+            btn2.style.backgroundColor = bgColor[counting];
+            btn2.style.color = txtColor[counting];
+            counting = (counting + 1) % 6;
+        }
+
         //Personal Info
         var p = document.createElement("p");
         document.body.appendChild(p);
@@ -42,7 +77,14 @@
             event.target.style.color = "magenta";
             event.target.style.backgroundColor = "white";
         });
-        a.addEventListener("click", showHide);
+        a.addEventListener("click", (event) => {
+            var x = document.getElementById("div1");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        });
         a.appendChild(linktxt);
         document.body.appendChild(a);
 
@@ -50,6 +92,7 @@
         var div = document.createElement('div');
         document.body.appendChild(div);
         div.setAttribute("id", "div1");
+
         var ul = document.createElement('ul');
         var liName = document.createElement('li');
         var liSubject = document.createElement('li');
@@ -88,12 +131,12 @@
         document.getElementById("mySnap").appendChild(l3)
         document.getElementById("mySnap").appendChild(l4)
         document.getElementById("divSnap").appendChild(ulSnap);
-        
+
         var img = document.createElement('img');
         img.src = "https://i.pinimg.com/564x/5c/74/de/5c74de8f9e5115afbefcabde195f21b9.jpg";
         document.body.appendChild(img);
 
-        l1.onclick = function () {  
+        l1.onclick = function () {
             img.src = "https://i.pinimg.com/564x/13/1b/f3/131bf37d8521972855ebe6adc496679a.jpg";
         }
         l2.onclick = function () {
