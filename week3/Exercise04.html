@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div id="maincontainer"></div>
+    <script>
+        var worker
+        var niceBool = false;
+        var counting =0
+        function showHide() {
+            var x = document.getElementById("div1");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        //Head
+        var h1 = document.createElement("h1");
+        h1.innerHTML = "Exercise 04: JavaScript&DOM";
+        document.body.appendChild(h1);
+
+        //Button Date
+        var btn1 = document.createElement("button");
+        btn1.innerHTML = "Click me to display Date and Time";
+        document.body.appendChild(btn1);
+        
+        //Personal Info
+        var p = document.createElement("p");
+        document.body.appendChild(p);
+        var a = document.createElement("a");
+        var linktxt = document.createTextNode("Personal Info");
+        a.style.color = "magenta";
+        a.addEventListener("mouseover", (event) => {
+            event.target.style.color = "blue";
+            event.target.style.backgroundColor = "yellow";
+        });
+        a.addEventListener("mouseout", (event) => {
+            event.target.style.color = "magenta";
+            event.target.style.backgroundColor = "white";
+        });
+        a.addEventListener("click", showHide);
+        a.appendChild(linktxt);
+        document.body.appendChild(a);
+
+        //Info
+        var div = document.createElement('div');
+        document.body.appendChild(div);
+        div.setAttribute("id", "div1");
+        var ul = document.createElement('ul');
+        var liName = document.createElement('li');
+        var liSubject = document.createElement('li');
+        var liSesmester = document.createElement('li');
+        liName.innerHTML = "Rungphailin Samanantakun ID:64011258";
+        liSubject.innerHTML = "Subject : WEB APPLICATION DEVELOPMENT";
+        liSesmester.innerHTML = "Semester : 2/2565";
+        ul.appendChild(liName);
+        ul.appendChild(liSubject);
+        ul.appendChild(liSesmester);
+        document.getElementById('div1').appendChild(ul);
+
+        //Snapshots
+        var h2 = document.createElement("h2");
+        h2.innerHTML = "Snapshots";
+        document.body.appendChild(h2);
+
+        var divSnapshot = document.createElement("div");
+        document.body.appendChild(divSnapshot);
+        divSnapshot.setAttribute("id", "divSnap");
+        var ulSnap = document.createElement("ul");
+        ulSnap.setAttribute("id", "mySnap");
+        document.body.appendChild(ulSnap);
+        var l1 = document.createElement("li");
+        var l2 = document.createElement("li");
+        var l3 = document.createElement("li");
+        var l4 = document.createElement("li");
+
+        l1.innerHTML = "<a href = '#'>Firework</a>";
+        l2.innerHTML = "<a href = '#'>Sakura</a>";
+        l3.innerHTML = "<a href = '#'>Sky</a>";
+        l4.innerHTML = "<a href = '#'>Sea</a>";
+
+        document.getElementById("mySnap").appendChild(l1)
+        document.getElementById("mySnap").appendChild(l2)
+        document.getElementById("mySnap").appendChild(l3)
+        document.getElementById("mySnap").appendChild(l4)
+        document.getElementById("divSnap").appendChild(ulSnap);
+        
+        var img = document.createElement('img');
+        img.src = "https://i.pinimg.com/564x/5c/74/de/5c74de8f9e5115afbefcabde195f21b9.jpg";
+        document.body.appendChild(img);
+
+        l1.onclick = function () {  
+            img.src = "https://i.pinimg.com/564x/13/1b/f3/131bf37d8521972855ebe6adc496679a.jpg";
+        }
+        l2.onclick = function () {
+            img.src = "https://i.pinimg.com/564x/c5/fa/83/c5fa83aa40b76893b2a76675ab308fb6.jpg";
+        }
+        l3.onclick = function () {
+            img.src = "https://i.pinimg.com/564x/3a/fa/9c/3afa9c24e4666fd0b8f3dc43c8a57834.jpg";
+        }
+        l4.onclick = function () {
+            img.src = "https://i.pinimg.com/564x/b2/d1/06/b2d106be4e4db059826234400b384392.jpg";
+        }
+
+    </script>
+</body>
+
+</html>
