@@ -28,36 +28,8 @@
         btn2.style.position = "fixed";
         document.body.appendChild(btn2);
 
-        btn1.onclick = function () {
-            createWorker()
-            btn2.style.visibility = "visible";
-            btn1.style.visibility = "hidden";
-        }
-
-        btn2.onclick = function () {
-            deleteWorker()
-            btn2.style.visibility = "hidden";
-            btn1.style.visibility = "visible";
-            btn1.style.color = btn2.style.color;
-            btn1.style.backgroundColor = btn2.style.backgroundColor;
-        }
-
-        var worker
+        //Change Color
         var counting = 0
-        function createWorker() {
-            worker = new Worker("worker.js");
-            btn2.innerHTML = new Date();
-            worker.onmessage = function (value) {
-                btn1.innerHTML = event.data;
-                btn2.innerHTML = event.data;
-                changeColor();
-            }
-        }
-
-        function deleteWorker() {
-            worker.terminate();
-        }
-
         function changeColor() {
             var bgColor = ["SaddleBrown", "LavenderBlush", "DeepPink", "lightblue", "lightgreen", "salmon"];
             var txtColor = ["rosybrown", "RebeccaPurple", "FloralWhite", "red   ", "hotpink", "navy"];
@@ -66,12 +38,45 @@
             counting = (counting + 1) % bgColor.length;
         }
 
-        //Personal Info
+        //Worker 
+         var worker
+         function createWorker() {
+             worker = new Worker("worker.js");
+             btn2.innerHTML = new Date();
+             worker.onmessage = function (value) {
+                 btn1.innerHTML = event.data;
+                 btn2.innerHTML = event.data;
+                 changeColor();
+             }
+         }
+ 
+         function deleteWorker() {
+             worker.terminate();
+         }
+
+        //Change state of Button 1
+        btn1.onclick = function () {
+            createWorker()
+            btn2.style.visibility = "visible";
+            btn1.style.visibility = "hidden";
+        }
+
+        //Change state of Button2 & set color from Button 1
+        btn2.onclick = function () {
+            deleteWorker()
+            btn2.style.visibility = "hidden";
+            btn1.style.visibility = "visible";
+            btn1.style.color = btn2.style.color;
+            btn1.style.backgroundColor = btn2.style.backgroundColor;
+        }
+
+        //Link Personal Info
         var p = document.createElement("p");
         document.body.appendChild(p);
         var a = document.createElement("a");
         var linktxt = document.createTextNode("Personal Info");
         a.style.color = "magenta";
+        //Mouseover -> change color
         a.addEventListener("mouseover", (event) => {
             event.target.style.color = "blue";
             event.target.style.backgroundColor = "yellow";
@@ -80,6 +85,7 @@
             event.target.style.color = "magenta";
             event.target.style.backgroundColor = "white";
         });
+        //click to displat Personal Info
         a.addEventListener("click", (event) => {
             var x = document.getElementById("div1");
             if (x.style.display === "none") {
@@ -91,7 +97,7 @@
         a.appendChild(linktxt);
         document.body.appendChild(a);
 
-        //Info
+        //Personal Info
         var div = document.createElement('div');
         document.body.appendChild(div);
         div.setAttribute("id", "div1");
@@ -114,6 +120,7 @@
         h2.innerHTML = "Snapshots";
         document.body.appendChild(h2);
 
+        //create ul & li
         var divSnapshot = document.createElement("div");
         document.body.appendChild(divSnapshot);
         divSnapshot.setAttribute("id", "divSnap");
@@ -136,6 +143,7 @@
         document.getElementById("mySnap").appendChild(l4)
         document.getElementById("divSnap").appendChild(ulSnap);
 
+        //Image
         var img = document.createElement('img');
         img.src = "https://i.pinimg.com/564x/5c/74/de/5c74de8f9e5115afbefcabde195f21b9.jpg";
         document.body.appendChild(img);
