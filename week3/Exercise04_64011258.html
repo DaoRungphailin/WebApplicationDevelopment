@@ -6,6 +6,8 @@
 <body>
     <div id="maincontainer"></div>
     <script>
+        document.title = "Exercise4_64011258";
+        
         //Head
         var h1 = document.createElement("h1");
         h1.innerHTML = "Exercise 04: JavaScript&DOM";
@@ -57,11 +59,11 @@
         }
 
         function changeColor() {
-            bgColor = ["black", "DarkSeaGreen", "DeepPink", "salmon", "lightgreen", "olive"];
-            txtColor = ["white", "DarkSlateGrey", "FloralWhite", "RebeccaPurple", "hotpink", "orangered",];
+            var bgColor = ["SaddleBrown", "LavenderBlush", "DeepPink", "lightblue", "lightgreen", "salmon"];
+            var txtColor = ["rosybrown", "RebeccaPurple", "FloralWhite", "red   ", "hotpink", "navy"];
             btn2.style.backgroundColor = bgColor[counting];
             btn2.style.color = txtColor[counting];
-            counting = (counting + 1) % 6;
+            counting = (counting + 1) % bgColor.length;
         }
 
         //Personal Info
