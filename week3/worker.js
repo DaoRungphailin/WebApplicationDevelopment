@@ -1,7 +1,5 @@
 function counting() {
-    date = new Date()
-    postMessage(date)
-    setTimeout("counting()", 1000)
+    postMessage(new Date())
+    setInterval("counting()", 1000)
 }
-
 counting();

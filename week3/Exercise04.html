@@ -6,19 +6,18 @@
 <body>
     <div id="maincontainer"></div>
     <script>
-        var worker
-        var niceBool = false;
-        var counting = 0
         //Head
         var h1 = document.createElement("h1");
         h1.innerHTML = "Exercise 04: JavaScript&DOM";
         document.body.appendChild(h1);
 
-        //Button Date
+        //Display Date
+        //Button 1
         var btn1 = document.createElement("button");
         btn1.innerHTML = "Click me to display Date and Time";
         document.body.appendChild(btn1);
 
+        //Button 2
         var btn2 = document.createElement("button");
         btn2.innerHTML = "test";
         btn2.style.top = "0px";
@@ -41,6 +40,8 @@
             btn1.style.backgroundColor = btn2.style.backgroundColor;
         }
 
+        var worker
+        var counting = 0
         function createWorker() {
             worker = new Worker("worker.js");
             btn2.innerHTML = new Date();
@@ -92,6 +93,7 @@
         var div = document.createElement('div');
         document.body.appendChild(div);
         div.setAttribute("id", "div1");
+        document.getElementById("div1").style.display = "none";
 
         var ul = document.createElement('ul');
         var liName = document.createElement('li');
